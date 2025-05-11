@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced 10-Step Research Roadmap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2c3e50',
+                        secondary: '#3498db',
+                        accent: '#e74c3c',
+                        neutral: '#ecf0f1',
+                        warning: '#ffc107',
+                        success: '#2ecc71',
+                        danger: '#e74c3c',
+                        info: '#3498db',
+                        light: '#ecf0f1',
+                        dark: '#2c3e50',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .step-number {
+                position: absolute;
+                top: -1.5rem;
+                left: -1.5rem;
+                width: 4rem;
+                height: 4rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                font-weight: 700;
+                color: white;
+                font-size: 1.25rem;
+            }
+            .step-card {
+                @apply bg-white p-8 rounded-2xl shadow-2xl relative overflow-hidden;
+            }
+            .prompt-code {
+                @apply bg-gray-50 border-l-4 border-secondary p-4 rounded-lg my-4 font-mono text-sm;
+            }
+            .nav-link {
+                @apply text-gray-600 hover:text-secondary transition-colors duration-300;
+            }
+            .card-hover {
+                @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+            }
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 text-gray-800">
+    <!-- 导航栏 -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50" id="mainNav">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-book-open text-secondary text-2xl"></i>
+                <span class="text-xl font-bold text-primary">Research Guide</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#principles" class="nav-link">Principles</a>
+                <a href="#roadmap" class="nav-link">Roadmap</a>
+                <a href="#tools" class="nav-link">Tools</a>
+            </div>
+            <button class="md:hidden text-primary text-xl" id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden bg-white shadow-lg absolute w-full left-0 top-full transform -translate-y-full opacity-0 pointer-events-none" id="mobileMenu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#principles" class="text-gray-600 hover:text-secondary transition-colors py-2">Principles</a>
+                <a href="#roadmap" class="text-gray-600 hover:text-secondary transition-colors py-2">Roadmap</a>
+                <a href="#tools" class="text-gray-600 hover:text-secondary transition-colors py-2">Tools</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄部分 -->
+    <header class="pt-24 pb-16 md:pt-32 md:pb-24 text-white" style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold leading-tight text-shadow">
+                    Mastering Research in the Digital Age
+                </h1>
+                <p class="text-[clamp(1rem,2vw,1.25rem)] mt-6 text-white/90 max-w-lg">
+                    A comprehensive guide to integrating cutting-edge tools into your research workflow with best practices.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#roadmap" class="bg-accent text-white px-6 py-3 rounded-lg font-medium shadow-lg flex items-center">
+                        Find Guidebook <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#tools" class="bg-white/10 text-white px-6 py-3 rounded-lg font-medium backdrop-blur-sm flex items-center">
+                        View AI Literature Program <i class="fa-solid fa-book-open ml-2"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <i class="fa-solid fa-lightbulb text-8xl text-white/90"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+        <!-- 研究人员为何使用AI -->
+        <section class="mb-20" id="principles">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary">Why Researchers Are Embracing Advanced Tools</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-700 italic text-lg">
+                        "I strategically blend universal clarity with targeted conventions when crossing disciplinary boundaries."
+                    </p>
+                    <div class="mt-6 flex items-center">
+                        <img src="https://picsum.photos/seed/prof1/60/60" alt="Professor" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <p class="font-semibold text-gray-800">Prof. X</p>
+                            <p class="text-gray-500 text-sm">HKUST</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md p-8">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+                    <p class="text-gray-700 italic text-lg">
+                        "I have used research tools to generate basic starting ideas for me to develop on."
+                    </p>
+                    <div class="mt-6 flex items-center">
+                        <img src="https://picsum.photos/seed/ugrad1/60/60" alt="Undergraduate Student" class="w-12 h-12 rounded-full object-cover">
+                        <div class="ml-4">
+                            <p class="font-semibold text-gray-800">YY</p>
+                            <p class="text-gray-500 text-sm">Undergraduate Student, HKUST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4个关键原则 -->
+            <div class="mt-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary">4 Key Principles for Effective Research Collaboration</h2>
+                    <div class="w-20 h-1 bg-secondary mx-auto mt-4 rounded-full"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl shadow-md p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-bl-full"></div>
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center text-secondary text-xl">
+                                <i class="fa-solid fa-microchip"></i>
+                            </div>
+                            <h3 class="ml-4 text-xl font-bold text-primary">Clear Instruction</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Vague prompts lead to generic outputs. Be specific about your requirements, including format, length, and context.
+                        </p>
+                        <div class="prompt-code">
+                            <p><span class="text-gray-500">Instead of:</span> "Explain machine learning"</p>
+                            <p class="mt-2"><span class="text-gray-500">Use:</span> "Provide a 200-word explanation of supervised ML with healthcare examples."</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-bl-full"></div>
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center text-secondary text-xl">
+                                <i class="fa-solid fa-list-ol"></i>
+                            </div>
+                            <h3 class="ml-4 text-xl font-bold text-primary">Defined Expectations</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Specify constraints such as word count, citation style, and technical depth to align tool outputs with your needs.
+                        </p>
+                        <div class="prompt-code">
+                            <p><span class="text-gray-500">Example:</span> "Create a 3-question Likert survey measuring employee engagement with response options from 'Strongly Disagree' to 'Strongly Agree.'"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-bl-full"></div>
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center text-secondary text-xl">
+                                <i class="fa-solid fa-context-menu"></i>
+                            </div>
+                            <h3 class="ml-4 text-xl font-bold text-primary">Context Matters</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Provide background information to help tools understand the academic context, audience, and purpose of your request.
+                        </p>
+                        <div class="prompt-code">
+                            <p><span class="text-gray-500">Prompt:</span> "As a research assistant, refine this draft for Harvard Business Review submission using professional, practitioner-focused tone."</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-md p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-bl-full"></div>
+                        <div class="flex items-center mb-6">
+                            <div class="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center text-secondary text-xl">
+                                <i class="fa-solid fa-refresh"></i>
+                            </div>
+                            <h3 class="ml-4 text-xl font-bold text-primary">Iterative Feedback</h3>
+                        </div>
+                        <p class="text-gray-700 mb-4">
+                            Treat tool collaboration as a dialogue. Refine prompts based on initial outputs to improve accuracy and relevance.
+                        </p>
+                        <div class="prompt-code">
+                            <p><span class="text-gray-500">Initial:</span> "Analyze causes of teen social media addiction"</p>
+                            <p class="mt-2"><span class="text-gray-500">Refined:</span> "Incorporate WHO 2023 data to link short-video usage with dopamine threshold changes in adolescents aged 13-18."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10步研究路线图 -->
+        <section id="roadmap" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.75rem,4vw,3rem)] font-bold text-primary">The Enhanced 10-Step Research Roadmap</h2>
+                <div class="w-24 h-1 bg-secondary mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-12">
+                <!-- Step 1: Define Research Question -->
+                <div class="step-card">
+                    <div class="step-number bg-secondary">1</div>
+                    <div class="flex items-start">
+                        <div class="step-icon bg-secondary text-white rounded-full p-3 mr-6">
+                            <i class="fa-solid fa-magnifying-glass text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-primary">Define Your Research Question</h3>
+                            <p class="text-gray-700 mt-4">Leverage AI to identify emerging trends and formulate interdisciplinary research questions with clear academic relevance.</p>
+
+                            <div class="prompt-code">
+                                <p class="mb-2"><strong>Example Prompt:</strong></p>
+                                <p>Identify 3-5 emerging trends in <span class="text-primary">[Research Topic]</span> relevant to <span class="text-primary">[Disciplinary Focus]</span> literature (2020-2025), emphasizing:</p>
+                                <ul class="list-disc pl-6 mt-2 text-gray-600">
+                                    <li>Core concepts and alignment with theoretical frameworks</li>
+                                    <li>Recent studies (with specific citations: Author, Year)</li>
+                                    <li>Novelty compared to prior research</li>
+                                </ul>
+                                <p class="mt-4"><strong>Gap Analysis Requirements:</strong></p>
+                                <ul class="list-disc pl-6 text-gray-600">
+                                    <li>Unanswered critical questions</li>
+                                    <li>Underutilized methodologies</li>
+                                    <li>Interdisciplinary connection opportunities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Systematic Literature Review -->
+                <div class="step-card">
+                    <div class="step-number bg-info">2</div>
+                    <div class="flex items-start">
+                        <div class="step-icon bg-info text-white rounded-full p-3 mr-6">
+                            <i class="fa-solid fa-book-open-reader text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-primary">Develop Systematic Literature Review Protocol</h3>
+                            <p class="text-gray-700 mt-4">Structured approach to keyword development, database construction, and critical analysis.</p>
+
+                            <div class="prompt-code">
+                                <p class="mb-2"><strong>2.1 Keyword Development:</strong></p>
+                                <p>Use Perplexity-Deepseek to generate synonyms for core concepts:<br>
+                                <span class="text-gray-600">"Analyze [Research Question] using [Discipline] terminology. Identify 5 core concepts with 10+ peer-reviewed synonyms each."</span></p>
+
+                                <p class="mt-4"><strong>2.2 Database Construction:</strong></p>
+                                <ul class="list-disc pl-6 text-gray-600">
+                                    <li>Web of Science search syntax: <span class="text-primary">TS=((Concept1 OR Syn1) AND (Concept2 OR Syn2))</span></li>
+                                    <li>Inclusion criteria: Q1 journals, 2018-2025, empirical studies</li>
+                                    <li>Zotero organization: Categorize by theory, methodology, and key variables</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Research Design -->
+                <div class="step-card">
+                    <div class="step-number bg-success">3</div>
+                    <div class="flex items-start">
+                        <div class="step-icon bg-success text-white rounded-full p-3 mr-6">
+                            <i class="fa-solid fa-flask text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-primary">Design Research Methodology</h3>
+                            <p class="text-gray-700 mt-4">Create rigorous experimental, survey, or qualitative protocols with ethical considerations.</p>
+
+                            <div class="prompt-code">
+                                <p class="mb-2"><strong>Protocol Examples:</strong></p>
+                                <ul class="list-disc pl-6 text-gray-600">
+                                    <li>Experiment: "Design a randomized controlled trial to test [Variable A]'s impact on [Variable B], including sample size calculation and ethical approval guidelines."</li>
+                                    <li>Survey: "Generate 5-point Likert-scale questions measuring [Construct], ensuring clarity and lack of bias."</li>
+                                    <li>Qualitative: "Develop 8 open-ended interview questions to explore [Phenomenon] in [Context]."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Data Collection -->
+                <div class="step-card">
+                    <div class="step-number bg-warning">4</div>
+                    <div class="flex items-start">
+                        <div class="step-icon bg-warning text-white rounded-full p-3 mr-6">
+                            <i class="fa-solid fa-database text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-primary">Data Collection</h3>
+                            <p class="text-gray-700 mt-4">Collect and prepare research data with appropriate tools and techniques.</p>
+
+                            <div class="prompt-code">
+                                <p class="mb-2"><strong>Data Collection Strategies:</strong></p>
+                                <ul class="list-disc pl-6 text-gray-600">
+                                    <li>Quantitative: "Recommend survey platforms and sampling methods for studying [Population] with [Sample Size]."</li>
+                                    <li>Qualitative: "Design a coding scheme for thematic analysis of [Type of Data] using NVivo."</li>
+                                    <li>Mixed Methods: "Outline a sequential explanatory design for integrating survey and interview data."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Data Analysis -->
+                <div class="step-card">
+                    <div class="step-number bg-primary">5</div>
+                    <div class="flex items-start">
+                        <div class="step-icon bg-primary text-white rounded-full p-3 mr-6">
+                            <i class="fa-solid fa-chart-line text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-primary">Data Analysis</h3>
+                            <p class="text-gray-700 mt-4">Apply appropriate statistical and qualitative methods to analyze research data.</p>
+
+                            <div class="prompt-code">
+                                <p class="mb-2"><strong>Analysis Techniques:</strong></p>
+                                <ul class="list-disc pl-6 text-gray-600">
+                                    <li>Quantitative: "Explain SEM-PLS method for analyzing [Constructs] with SmartPLS software."</li>
+                                    <li>Qualitative: "Conduct thematic analysis on [Dataset] identifying 5 key themes with supporting quotes."</li>
+                                    <li>Mixed Methods: "Outline procedures for triangulating survey and interview findings."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 6: Writing the Paper -->
+                <div class="step-card">
+                    <div class="step-number bg-secondary">6</div>
+                    <div class="flex items-start">
+                        <div class="step-icon bg-secondary text-white rounded-full p-3 mr-6">
+                            <i class="fa-solid fa-pencil text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-primary">Writing the Paper</h3>
+                            <p class="text-gray-700 mt-4">Transform research findings into a structured academic paper with clear arguments.</p>
+
+                            <div class="prompt-code">
+                                <p class="mb-2"><strong>Academic Writing Prompts:</strong></p>
+                                <ul class="list-disc pl-6 text-gray-600">
+                                    <li>Introduction: "Draft an introduction establishing the research gap and significance of [Topic]."</li>
+                                    <li>Methodology: "Describe the research design, sample, and data collection procedures following APA guidelines."</li>
+                                    <li>Results: "Present ANOVA results for [Variables] including F-statistic, p-value, and effect size."</li>
+                                    <li>Discussion: "Discuss how findings support/reject hypotheses and their theoretical implications."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 7: Proofreading & Revision -->
+                <div class="step-card">
+                    <div class="step-number bg-info">7</div>
+                    <div class="flex items-start">
+                        <div class="step-icon bg-info text-white rounded-full p-3 mr-6">
+                            <i class="fa-solid fa-spell-check text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-primary">Proofreading & Revision</h3>
+                            <p class="text-gray-700 mt-4">Refine the manuscript for clarity, coherence, and adherence to academic standards.</p>
+
+                            <div class="prompt-code">
+                                <p class="mb-2"><strong>Revision Checklist:</strong></p>
+                                <ul class="list-disc pl-6 text-gray-600">
+                                    <li>Structure: "Ensure logical flow between sections and paragraphs."</li>
+                                    <li>Clarity: "Simplify complex sentences and replace jargon with accessible terminology."</li>
+                                    <li>Citations: "Verify all in-text citations match the reference list in APA 7th edition format."</li>
+                                    <li>Ethics: "Confirm compliance with research ethics guidelines and informed consent procedures."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 8: Journal Selection & Submission -->
+                <div class="step-card">
+                    <div class="step-number bg-success">8</div>
+                    <div class="flex items-start">
+                        <div class="step-icon bg-success text-white rounded-full p-3 mr-6">
+                            <i class="fa-solid fa-envelope text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-primary">Journal Selection & Submission</h3>
+                            <p class="text-gray-700 mt-4">Identify appropriate journals and prepare submissions according to their guidelines.</p>
+
+                            <div class="prompt-code">
+                                <p class="mb-2"><strong>Journal Selection Criteria:</strong></p>
+                                <ul class="list-disc pl-6 text-gray-600">
+                                    <li>Scope: "Find journals publishing on [Topic] with impact factor between [X] and [Y]."</li>
+                                    <li>Audience: "Recommend journals targeting [Academic/Practitioner] audience."</li>
+                                    <li>Formatting: "Adjust manuscript to [Journal Name] guidelines including font, margins, and references."</li>
+                                    <li>Cover Letter: "Draft a cover letter highlighting novelty and contributions of the study."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 9: Peer Review Response -->
+                <div class="step-card">
+                    <div class="step-number bg-warning">9</div>
+                    <div class="flex items-start">
+                        <div class="step-icon bg-warning text-white rounded-full p-3 mr-6">
+                            <i class="fa-solid fa-comments text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-primary">Peer Review Response</h3>
+                            <p class="text-gray-700 mt-4">Address reviewer comments constructively and revise the manuscript accordingly.</p>
+
+                            <div class="prompt-code">
+                                <p class="mb-2"><strong>Response Strategies:</strong></p>
+                                <ul class="list-disc pl-6 text-gray-600">
+                                    <li>Clarification: "Provide additional context for ambiguous statements in Section [X]."</li>
+                                    <li>Revisions: "Revise methodology section to address concerns about sampling procedure."</li>
+                                    <li>New Analyses: "Conduct supplementary analysis requested by Reviewer 2 and report results."</li>
+                                    <li>Tone: "Respond politely to all comments, even if disagreeing with certain points."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 10: Dissemination & Impact -->
+                <div class="step-card">
+                    <div class="step-number bg-primary">10</div>
+                    <div class="flex items-start">
+                        <div class="step-icon bg-primary text-white rounded-full p-3 mr-6">
+                            <i class="fa-solid fa-bullhorn text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-primary">Dissemination & Impact</h3>
+                            <p class="text-gray-700 mt-4">Maximize the visibility and impact of your research through strategic dissemination.</p>
+
+                            <div class="prompt-code">
+                                <p class="mb-2"><strong>Dissemination Plan:</strong></p>
+                                <ul class="list-disc pl-6 text-gray-600">
+                                    <li>Conferences: "Identify 3 relevant conferences to present findings and submit abstracts."</li>
+                                    <li>Open Access: "Determine options for making the article open access via [Repository/Journal]."</li>
+                                    <li>Media: "Draft a press release highlighting key findings for non-academic audiences."</li>
+                                    <li>Networking: "Connect with researchers in related fields via LinkedIn and ResearchGate."</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<!-- 推荐工具部分 -->
+<section id="tools" class="mb-20">
+    <div class="text-center mb-12">
+        <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-primary">Research Tools</h2>
+        <div class="w-20 h-12 bg-secondary mx-auto mt-4 rounded-full"></div>
+        <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+            A curated list of advanced tools to support your research journey
+        </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- 工具1：Perplexity (Deepseek R1) -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300">
+            <div class="relative h-48 overflow-hidden">
+                <img src="/Users/huangxinjie/PycharmProjects/AI kit/img/1.jpg" alt="Perplexity AI" class="w-full h-full object-fit: contain; /* 调整为contain以适应图片 */" group-hover:scale-105 transition-transform duration-500>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Perplexity</h3>
+                </div>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-700 mb-4">
+                    AI-powered academic search engine for trend identification and literature summarization.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">AI Research Assistant</span>
+                    <a href="#" class="text-secondary hover:text-primary font-medium flex items-center">
+                        Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 工具1：(Deepseek R1) -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300">
+            <div class="relative h-48 overflow-hidden">
+                <img src h-48 overflow-hidden">
+                <img src="/Users/huangxinjie/PycharmProjects/AI kit/img/2.jpg" alt="Perplexity AI" class="w-full h-full object-fit: contain; /* 调整为contain以适应图片 */" group-hover:scale-105 transition-transform duration-500>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Deepseek R1</h3>
+                </div>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-700 mb-4">
+                    AI-powered academic search engine for trend identification and literature summarization.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">AI Research Assistant</span>
+                    <a href="#" class="text-secondary hover:text-primary font-medium flex items-center">
+                        Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 工具2：Zotero -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300">
+            <div class="relative h-48 overflow-hidden">
+                <img src="/Users/huangxinjie/PycharmProjects/AI kit/img/3.jpg" alt="Zotero" class="w-full h-full object-fit: contain; /* 调整为contain以适应图片 */" group-hover:scale-105 transition-transform duration-500>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Zotero</h3>
+                </div>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-700 mb-4">
+                    Free tool for organizing citations and building literature databases.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">Reference Management</span>
+                    <a href="#" class="text-secondary hover:text-primary font-medium flex items-center">
+                        Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 工具3：Feishu+Kimi -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300">
+            <div class="relative h-48 overflow-hidden">
+                <img src="/Users/huangxinjie/Desktop/pictures/4.jpg" alt="Feishu+Kimi" class="w-full h-full object-fit: contain; /* 调整为contain以适应图片 */" group-hover:scale-105 transition-transform duration-500>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Feishu+Kimi</h3>
+                </div>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-700 mb-4">
+                    AI-powered platform for academic papers analysis and research assistance.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">AI Research Assistant</span>
+                    <a href="#" class="text-secondary hover:text-primary font-medium flex items-center">
+                        Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 工具4：Web of Science -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300">
+            <div class="relative h-48 overflow-hidden">
+                <img src="/Users/huangxinjie/PycharmProjects/AI kit/img/5.jpg" alt="Web of Science" class="w-full h-full object-fit: contain; /* 调整为contain以适应图片 */" group-hover:scale-105 transition-transform duration-500>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="fa-solid fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Web of Science</h3>
+                </div>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-700 mb-4">
+                    Comprehensive research platform for citation analysis and academic literature searching.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">Academic Search</span>
+                    <a href="#" class="text-secondary hover:text-primary font-medium flex items-center">
+                        Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 工具6：Qwen API Literature Program -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden group hover:shadow-xl transition-all duration-300">
+            <div class="relative h-48 overflow-hidden">
+                <img src="/Users/huangxinjie/PycharmProjects/AI kit/img/6.png" alt="Qwen API Literature Program" class="w-full h-full object-fit: contain; /* 调整为contain以适应图片 */" group-hover:scale-105 transition-transform duration-500>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 p-6">
+                    <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white mb-3">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">Qwen API Literature Program</h3>
+                </div>
+            </div>
+            <div class="p-6">
+                <p class="text-gray-700 mb-4">
+                    AI-powered platform for localized academic papers analysis and research assistance.
+                </p>
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-500">AI Research Assistant</span>
+                    <a href="#" class="text-secondary hover:text-primary font-medium flex items-center">
+                        Learn more <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
